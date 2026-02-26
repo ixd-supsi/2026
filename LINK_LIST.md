@@ -208,3 +208,23 @@ https://software.nasa.gov/
 
 Sfide pubbliche con dataset aperti per ricerca e innovazione.\
 https://www.nasa.gov/solve/
+
+------------------------------------------------------------------------
+
+## Archivi multimediali con contenuti legati all'esplorazione spaziale
+
+#### Internet Archive
+
+Collezione collaborativa con immagini e video della NASA
+https://archive.org/details/nasa 
+
+#### Europeana
+
+Immagini e testi legati al tema dell'astronomia
+https://www.europeana.eu/en/search?page=1&query=%22Astronomy%22&view=grid
+
+#### WIkimedia Commons
+
+Immagini prodotte dalla NASA
+https://commons.wikimedia.org/wiki/Category:Files_from_NASA_with_known_IDs
+
