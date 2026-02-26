@@ -6,6 +6,14 @@ Portale centrale per foto storiche, video, immagini di missione e
 comunicati multimediali.\
 https://images.nasa.gov/
 
+##### Nasa Photojournal
+
+Archivio di immagini, animazioni e video delle missioni di esplorazione del sistema solare \
+https://science.nasa.gov/photojournal/
+
+Immagini raccolte dall'osservatorio spaziale Webb \
+https://science.nasa.gov/mission/webb/multimedia/images/
+
 #### Archivio Storico NASA (HQ & centri)
 
 Fotografie storiche digitalizzate dei programmi Apollo, Shuttle e delle
@@ -27,7 +35,6 @@ https://spaceflight.nasa.gov/gallery/images/
 
 Immagini storiche aerospaziali, velivoli e sistemi di propulsione.\
 https://www.nasa.gov/glenn/multimedia/imagegallery/
-
 
 ## Archivi di Immagini Planetarie e Spaziali
 
@@ -62,6 +69,14 @@ https://mast.stsci.edu/
 
 Immagini continue del Sole e prodotti scientifici correlati.\
 https://sdo.gsfc.nasa.gov/data/
+
+
+#### Wikiarchives.space
+
+Raccolta di immagini legate all'esplorazione spaziale, libere da diritti d'autore \
+https://wikiarchives.space/
+
+
 
 ------------------------------------------------------------------------
 
@@ -228,3 +243,11 @@ https://www.europeana.eu/en/search?page=1&query=%22Astronomy%22&view=grid
 Immagini prodotte dalla NASA \
 https://commons.wikimedia.org/wiki/Category:Files_from_NASA_with_known_IDs
 
+------------------------------------------------------------------------
+
+## Archivi dell'ESA
+
+## Hubble
+
+Immagini raccolte dal telescopio spaziale Hubble \
+https://sci.esa.int/web/hubble/multimedia-gallery
