@@ -215,16 +215,16 @@ https://www.nasa.gov/solve/
 
 #### Internet Archive
 
-Collezione collaborativa con immagini e video della NASA
+Collezione collaborativa con immagini e video della NASA \
 https://archive.org/details/nasa 
 
 #### Europeana
 
-Immagini e testi legati al tema dell'astronomia
+Immagini e testi legati al tema dell'astronomia \
 https://www.europeana.eu/en/search?page=1&query=%22Astronomy%22&view=grid
 
 #### WIkimedia Commons
 
-Immagini prodotte dalla NASA
+Immagini prodotte dalla NASA \
 https://commons.wikimedia.org/wiki/Category:Files_from_NASA_with_known_IDs
 
