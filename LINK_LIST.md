@@ -81,7 +81,7 @@ https://astrogeology.usgs.gov/search
 #### Modello di Elevazione Lunare LOLA
 
 Dati ad alta risoluzione del terreno lunare (GeoTIFF).\
-https://imbrium.mit.edu/EXTRAS/LOLA/
+https://imbrium.mit.edu
 
 #### Mars Orbiter Laser Altimeter (MOLA)
 
