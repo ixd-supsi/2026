@@ -6,13 +6,12 @@ function preload() {
 }
 
 function setup() {
-	createCanvas(400, 400, WEBGL)
-
+	createCanvas(900, 600, WEBGL)
+	piastrella.loadPixels()
 }
 
 function draw() {
 	background(0)
-	stroke(255)
 
 	rotateX(PI/3)
 
@@ -20,8 +19,7 @@ function draw() {
 		rotateZ(mouseX * 0.01)
 	}
 
-
-	const spaziatura = 18
+	const spaziatura = 8
 
 	const numPuntiX = piastrella.width
 	const numPuntiY = piastrella.height
@@ -29,14 +27,21 @@ function draw() {
 	const margineX = - (numPuntiX - 1) * spaziatura / 2
 	const margineY = - (numPuntiY - 1) * spaziatura / 2
 
-
 	noFill()
+	stroke(255)
+	strokeWeight(1)
+
 	beginShape(POINTS)
 	for (let j=0; j<numPuntiY; j++) {
 		for(let i=0; i<numPuntiX; i++) {
 			const px = i * spaziatura + margineX
 			const py = j * spaziatura + margineY
-			vertex(px, py)
+			// const colore = piastrella.get(i, j)
+			// const grigio = brightness(colore)
+			const indice = (j * piastrella.width + i) * 4
+			const rosso = piastrella.pixels[indice]
+			const pz = rosso * 0.3
+			vertex(px, py, pz)
 		}
 	}
 	endShape()
