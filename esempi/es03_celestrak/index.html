@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CelesTrak Active Objects</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #05070d;
+      color: #d7def2;
+      overflow: hidden;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    canvas {
+      display: block;
+    }
+    .hint {
+      position: fixed;
+      left: 12px;
+      bottom: 10px;
+      font-size: 12px;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+</head>
+<body>
+  <div class="hint">Drag to rotate | wheel to zoom | color: Mean Motion | scale: Earth radius</div>
+
+  <script>
+	// https://celestrak.org/NORAD/elements/index.php?FORMAT=json
+    const DATA_URL = "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=json";
+    const MU_EARTH = 398600.4418; // km^3 / s^2
+    const EARTH_RADIUS_KM = 6378.137;
+    const EARTH_RADIUS_PX = 50;
+
+    let satPoints = [];
+    let loading = true;
+    let errorMessage = "";
+
+    function degToRad(v) {
+      return v * Math.PI / 180;
+    }
+
+    // Solve M = E - e*sin(E) for E via Newton iterations.
+    function solveKepler(meanAnomalyRad, eccentricity) {
+      let E = meanAnomalyRad;
+      for (let i = 0; i < 6; i += 1) {
+        const f = E - eccentricity * Math.sin(E) - meanAnomalyRad;
+        const fp = 1 - eccentricity * Math.cos(E);
+        E = E - f / fp;
+      }
+      return E;
+    }
+
+    function elementToEciKm(sat) {
+      const inc = degToRad(Number(sat.INCLINATION));
+      const raan = degToRad(Number(sat.RA_OF_ASC_NODE));
+      const argp = degToRad(Number(sat.ARG_OF_PERICENTER));
+      const meanAnomaly = degToRad(Number(sat.MEAN_ANOMALY));
+      const e = Number(sat.ECCENTRICITY);
+      const meanMotionRevPerDay = Number(sat.MEAN_MOTION);
+
+      if (
+        !Number.isFinite(inc) ||
+        !Number.isFinite(raan) ||
+        !Number.isFinite(argp) ||
+        !Number.isFinite(meanAnomaly) ||
+        !Number.isFinite(e) ||
+        !Number.isFinite(meanMotionRevPerDay) ||
+        meanMotionRevPerDay <= 0
+      ) {
+        return null;
+      }
+
+      const n = meanMotionRevPerDay * 2 * Math.PI / 86400; // rad / s
+      const a = Math.cbrt(MU_EARTH / (n * n)); // km
+      const E = solveKepler(meanAnomaly, e);
+      const nu = 2 * Math.atan2(
+        Math.sqrt(1 + e) * Math.sin(E / 2),
+        Math.sqrt(1 - e) * Math.cos(E / 2)
+      );
+      const r = a * (1 - e * Math.cos(E));
+      const u = argp + nu;
+
+      const cosO = Math.cos(raan);
+      const sinO = Math.sin(raan);
+      const cosI = Math.cos(inc);
+      const sinI = Math.sin(inc);
+      const cosU = Math.cos(u);
+      const sinU = Math.sin(u);
+
+      const x = r * (cosO * cosU - sinO * sinU * cosI);
+      const y = r * (sinO * cosU + cosO * sinU * cosI);
+      const z = r * (sinU * sinI);
+      return { x, y, z, meanMotionRevPerDay };
+    }
+
+    async function fetchElements() {
+      try {
+        const response = await fetch(DATA_URL);
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+
+        const json = await response.json();
+        const raw = Array.isArray(json) ? json : [];
+        satPoints = raw
+          .map(elementToEciKm)
+          .filter(Boolean)
+          .map((p) => {
+            const t = constrain(map(p.meanMotionRevPerDay, 1, 16, 0, 1), 0, 1);
+            return {
+              x: p.x * (EARTH_RADIUS_PX / EARTH_RADIUS_KM),
+              y: p.y * (EARTH_RADIUS_PX / EARTH_RADIUS_KM),
+              z: p.z * (EARTH_RADIUS_PX / EARTH_RADIUS_KM),
+              r: lerp(90, 255, t),
+              g: lerp(180, 130, t),
+              b: lerp(255, 90, t)
+            };
+          });
+      } catch (err) {
+        errorMessage = "Failed to fetch data: " + (err && err.message ? err.message : String(err));
+      } finally {
+        loading = false;
+        console.log("number of satPoints: " + satPoints.length);
+      }
+    }
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight, WEBGL);
+      pixelDensity(1);
+      noStroke();
+      fetchElements();
+    }
+
+    function drawEarth() {
+      push();
+      ambientMaterial(25, 55, 140);
+      sphere(EARTH_RADIUS_PX, 28, 20);
+      pop();
+    }
+
+    function drawSatPoints() {
+      strokeWeight(3);
+      noFill();
+      for (const p of satPoints) {
+        stroke(p.r, p.g, p.b, 215);
+        point(p.x, -p.z, p.y); // simple axis remap for intuitive view
+      }
+      noStroke();
+    }
+
+    function draw() {
+      background(5, 7, 13);
+      orbitControl(1.0, 1.0, 0.1);
+
+      ambientLight(110);
+      directionalLight(180, 200, 255, -0.5, -0.8, -0.6);
+      rotateY(frameCount * 0.002);
+
+      if (!loading && !errorMessage) {
+        drawSatPoints();
+      }
+      drawEarth();
+
+      if (loading || errorMessage) {
+        resetMatrix();
+        translate(-width / 2, -height / 2);
+        fill(loading ? color(180, 200, 255) : color(255, 120, 120));
+        // textSize(16);
+        // text(loading ? "Loading CelesTrak active objects..." : errorMessage, 20, 32);
+      }
+
+      resetMatrix();
+      translate(-width / 2, -height / 2);
+      fill(180, 200, 255);
+      // textSize(13);
+      // text("Objects: " + satPoints.length, 20, 52);
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+  </script>
+</body>
+</html>
