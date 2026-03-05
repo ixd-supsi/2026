@@ -24,10 +24,6 @@ https://www.hq.nasa.gov/alsj/
 
 # Archivi di Immagini Planetarie e Spaziali
 
-#### Planetary Data System Imaging Node (PDS)
-Immagini planetarie grezze ed elaborate provenienti da missioni NASA.\
-https://pds-imaging.jpl.nasa.gov/
-
 #### Mars Rover Photos (JPL)
 Immagini in tempo reale e archiviate da Curiosity, Perseverance, Spirit,
 Opportunity.\
