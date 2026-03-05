@@ -137,22 +137,7 @@
       fetchElements();
     }
 
-    function drawEarth() {
-      push();
-      ambientMaterial(25, 55, 140);
-      sphere(EARTH_RADIUS_PX, 28, 20);
-      pop();
-    }
 
-    function drawSatPoints() {
-      strokeWeight(3);
-      noFill();
-      for (const p of satPoints) {
-        stroke(p.r, p.g, p.b, 215);
-        point(p.x, -p.z, p.y); // simple axis remap for intuitive view
-      }
-      noStroke();
-    }
 
     function draw() {
       background(5, 7, 13);
@@ -163,9 +148,18 @@
       rotateY(frameCount * 0.002);
 
       if (!loading && !errorMessage) {
-        drawSatPoints();
+        strokeWeight(3);
+      noFill();
+      for (const p of satPoints) {
+        stroke(p.r, p.g, p.b, 215);
+        point(p.x, -p.z, p.y); // simple axis remap for intuitive view
       }
-      drawEarth();
+      noStroke();
+      }
+      push();
+      ambientMaterial(25, 55, 140);
+      sphere(EARTH_RADIUS_PX, 28, 20);
+      pop();
 
       if (loading || errorMessage) {
         resetMatrix();
