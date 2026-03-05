@@ -4,7 +4,6 @@ let geom
 let bbox
 
 
-
 function preload() {
 	piastrella = loadImage("tiles/moon_med.png")
 }
