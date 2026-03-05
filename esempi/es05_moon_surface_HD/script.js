@@ -6,7 +6,7 @@ let bbox
 
 
 function preload() {
-	piastrella = loadImage("tiles/moon_small.png")
+	piastrella = loadImage("tiles/moon_med.png")
 }
 
 function setup() {
@@ -17,11 +17,11 @@ function setup() {
 	const spaziatura = 3
 	const margineX = - (piastrella.width - 1) * spaziatura / 2
 	const margineY = - (piastrella.height - 1) * spaziatura / 2
-	const min = -20
-	const max = 20
+	const min = -60
+	const max = 60
 
 	geom = new p5.Geometry()
-	textureMode(NORMAL)
+
 
 	for (let j = 0; j < piastrella.height; j++) {
 		for (let i = 0; i < piastrella.width; i++) {
@@ -60,17 +60,20 @@ function draw() {
 
 	const tx = Math.sin(frameCount * 0.002) * bbox.size.x * 0.2
 	const ty = Math.cos(frameCount * 0.003) * bbox.size.y * 0.2
-	const rz = Math.sin(frameCount * 0.001) * Math.PI
+	const tz = map(Math.sin(frameCount * 0.004), -1, 1, -bbox.size.z, -bbox.size.z*2)
+	const rx = map(Math.sin(frameCount * 0.002), -1, 1, Math.PI / 6, Math.PI / 3)
+	const rz = Math.sin(frameCount * 0.0005) * Math.PI * 2
 
-	rotateX(PI/3)
+	rotateX(rx)
 	rotateZ(rz)
-	translate(tx, ty, 0)
+	translate(tx, ty, -150)
 
-	ambientLight(60)
+	ambientLight(120)
 	directionalLight(255, 255, 255, -1, 0, -1)
 
 	noStroke()
 	texture(piastrella)
+	textureMode(NORMAL)
 	model(geom)
 
 
@@ -82,6 +85,6 @@ function windowResized() {
 
 function getHeight(immagine, i, j, min, max) {
 	const idx = 4 * (i + j * immagine.width)
-	const brightness = immagine.pixels[idx]
-	return map(brightness, 0, 255, min, max)
+	const red = immagine.pixels[idx]
+	return red
 }
