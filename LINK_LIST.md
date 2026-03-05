@@ -22,19 +22,7 @@ Scansioni ad alta risoluzione della fotografia e documentazione delle
 missioni Apollo.\
 https://www.hq.nasa.gov/alsj/
 
-#### Database Immagini Volo Umano NASA
-Foto di astronauti, Shuttle e operazioni ISS.\
-https://spaceflight.nasa.gov/gallery/images/
-
-#### NASA Glenn Image Library
-Immagini storiche aerospaziali, velivoli e sistemi di propulsione.\
-https://www.nasa.gov/glenn/multimedia/imagegallery/
-
 # Archivi di Immagini Planetarie e Spaziali
-
-#### Planetary Data System Imaging Node (PDS)
-Immagini planetarie grezze ed elaborate provenienti da missioni NASA.\
-https://pds-imaging.jpl.nasa.gov/
 
 #### Mars Rover Photos (JPL)
 Immagini in tempo reale e archiviate da Curiosity, Perseverance, Spirit,
