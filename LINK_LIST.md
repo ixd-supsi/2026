@@ -22,10 +22,6 @@ Scansioni ad alta risoluzione della fotografia e documentazione delle
 missioni Apollo.\
 https://www.hq.nasa.gov/alsj/
 
-#### Database Immagini Volo Umano NASA
-Foto di astronauti, Shuttle e operazioni ISS.\
-https://spaceflight.nasa.gov/gallery/images/
-
 #### NASA Glenn Image Library
 Immagini storiche aerospaziali, velivoli e sistemi di propulsione.\
 https://www.nasa.gov/glenn/multimedia/imagegallery/
