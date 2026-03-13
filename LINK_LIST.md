@@ -51,6 +51,10 @@ https://sdo.gsfc.nasa.gov/data/
 Raccolta di immagini legate all'esplorazione spaziale, libere da diritti d'autore \
 https://wikiarchives.space/
 
+#### David Rumsey Map Collection
+Mappe e libri antichi legati allo studio astronomico 
+https://www.davidrumsey.com/luna/servlet/view/search/what/Celestial+Atlas/Celestial?q=moon&sort=pub_list_no_initialsort%2Cpub_date%2Cpub_list_no%2Cseries_no
+
 
 # Dataset di Terreno ed Elevazione (Mappe Altimetriche, DEM, GeoTIFF)
 
