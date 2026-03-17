@@ -13,3 +13,7 @@ Info satelliti:\
 https://celestrak.org/NORAD/elements/  
 API (JSON):\
  https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=json
+
+
+ ### Compito 3
+ Descrivere le intenzioni del progetto in un paio di paragrafi. Cominciare con descrivere l'idea portante; può essere d'aiuto definire il contesto e il target. Aspetti tecnici e note possono anche indicare la direzione del progetto.
