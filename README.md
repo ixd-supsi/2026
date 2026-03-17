@@ -28,3 +28,20 @@ Questa repository contiene materiale didattico ed esempi pratici per l’apprend
 - [p5js](https://p5js.org) - Libreria per programmazione creativa e visuale
 - [Three.js](https://threejs.org) - Libreria per grafica 3D nel browser
 - [thi.ng](https://thi.ng) - Collezione di strumenti per programmazione, con focus su grafica e geometria
+
+
+#### Repository degli studenti - progetto 1:
+- Alissa Bionda, [Telescopio Spitzer](https://github.com/Ali-0032/CV429)
+- Carla De Gennaro, [Satelliti](https://github.com/carladegennaro/interaction_design)
+- Claudio Ceppi, [Comunicazioni audio nello spazio](https://github.com/Claudio-Ceppi/CV429.01-Interaction-Design)
+- Daniele Falcone, [Suolo lunare](https://github.com/Dadiccs/nasa)
+- Davide Baretti, [Tute spaziali](https://github.com/davidebarattini/media)
+- Djordjaa Krsteva, [Esopianeti](https://github.com/Djordjaa/Atlas_of_Exoplanets)
+- Laura Pantani, [Come è fatto un satellite](https://github.com/Laura-pantani/Nasa70)
+- Luca Mazzola, [Proporzioni del sistema solare](https://github.com/LucaMazzolaa/NASA70)
+- Melissa Broggini, [NEO - Near Heart Objects](https://github.com/melissabroggini/Media-Interactions)
+- Michelle Chicherio, [Oltre il mito](https://github.com/Kikerio/NASA70)
+- Nahel Belli, [Rover Perseverance](https://github.com/Naheleee/NaheleBelli_IXD_2026)
+- Riccardo Vosti, [Test di gravità](https://github.com/riccardovosti)
+- Sofia Ribeiro, [Prime pagine sull'allunaggio](https://github.com/SofiaRibeiroMarques/NASA)
+
