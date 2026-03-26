@@ -22,12 +22,6 @@ Facilisis magna etiam tempor orci eu. Felis donec et odio pellentesque diam volu
 
 https://github.com/user-attachments/assets/38d1768e-a90e-45dd-b12b-1ac0aa1151b3
 
-
-
-https://github.com/user-attachments/assets/d935d789-556c-424c-bd38-be57f3e6c83f
-
-
-
 [<img src="doc/cards.gif" width="500" alt="Magic trick">]()
 
 
