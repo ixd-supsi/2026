@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Es7 richiesta API n70</title>
+
+	<style>
+		.card {
+			border: 1px solid #000;
+			padding: 10px;
+			margin: 10px;
+		}
+		.card img {
+			width: 300px;
+			object-fit: cover;
+		}
+	</style>
+</head>
+<body>
+
+	<main></main>
+
+
+	<script type="module">
+
+		// const data = fetch("https://ixd-supsi.github.io/n70api/data.json")
+		// 	.then(response => response.json()).then(data => {
+		// 		console.log(data)
+		// 	})
+		// 	.catch(error => {
+		// 		console.error("Errore nella richiesta API:", error)
+		// 	})
+
+		const API_URL = "https://ixd-supsi.github.io/n70api/"
+		const IMAGE_URL = API_URL + "immagini/"
+
+		const data = await fetch(API_URL + "/data.json").then(r => r.json())
+
+
+		let html = ""
+		data.forEach(element => {
+
+			html += `
+			<div class="card">
+				<h2>${element.titolo}</h2>
+				<p>${element.autore}</p>
+				<img src="${IMAGE_URL + element.immagine}" alt="${element.titolo}"><br>
+				<a href="${element.url}">${element.url}</a>
+			</div>
+			`
+		})
+
+		document.querySelector("main").innerHTML = html
+
+
+
+
+
+	</script>
+
+</body>
+</html>
