@@ -6,10 +6,13 @@
 	<title>Es7 richiesta API n70</title>
 
 	<style>
+		body {
+			margin: 2em;
+		}
 		.card {
 			border: 1px solid #000;
-			padding: 10px;
-			margin: 10px;
+			padding: 16px;
+			margin: 0 0 16px 0;
 		}
 		.card img {
 			width: 300px;
@@ -19,8 +22,11 @@
 </head>
 <body>
 
-	<main></main>
+	<h1 class="titolo_principale">Nasa 70</h1>
 
+	<main>
+		caricamento dati…
+	</main>
 
 	<script type="module">
 
@@ -33,28 +39,55 @@
 		// 	})
 
 		const API_URL = "https://ixd-supsi.github.io/n70api/"
+
+
 		const IMAGE_URL = API_URL + "immagini/"
 
-		const data = await fetch(API_URL + "/data.json").then(r => r.json())
+		const data = await fetch(API_URL + "data.json").then(r => r.json())
+
+		console.log("Numero di elementi: " + data.length)
+		console.log(data)
+		console.log(data[2].titolo)
 
 
 		let html = ""
+
+
 		data.forEach(element => {
 
-			html += `
-			<div class="card">
-				<h2>${element.titolo}</h2>
-				<p>${element.autore}</p>
-				<img src="${IMAGE_URL + element.immagine}" alt="${element.titolo}"><br>
-				<a href="${element.url}">${element.url}</a>
-			</div>
-			`
+			// metodo uno: testo puro
+			html += "<div class='card'>"
+			html += "<h2>" + element.titolo + "</h2>"
+			html += "<p>" + element.autore + "</p>"
+			html += "<p>" + element.data.giorno + ". " + element.data.mese + ". " + element.data.anno + "</p>"
+			html += "<p>" + element.descrizione + "</p>"
+			html += "<p>" + element.tags.join(", ") + "</p>"
+			html += "<img src='" + IMAGE_URL + element.immagine + "' alt='" + element.titolo + "'><br>"
+			html += "<a href='" + element.url + "'>" + element.url + "</a>"
+
+			html += "</div>"
+
+			// metodo due: template string
+			// html += `
+			// 	<h2>${element.titolo}</h2>
+			// 	<p>${element.autore}</p>
+			// 	<p>${element.data.anno}</p>
+			// 	<p>${element.descrizione}</p>
+			// 	<img src="${IMAGE_URL + element.immagine}" alt="${element.titolo}"><br>
+			// 	<a href="${element.url}">${element.url}</a>
+			// </div>
+			// `
+
+			// metodo tre: DOM
+			// const div = document.createElement("div")
+			// const h2 = document.createElement("h2")
+			// h2.innerHTML = element.titolo
+			// div.appendChild(h2)
+			// document.querySelector("main").appendChild(div)
+
 		})
 
 		document.querySelector("main").innerHTML = html
-
-
-
 
 
 	</script>
