@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Es8 data sorting</title>
+
+	<style>
+		body {
+			margin: 2em;
+			font-size: 1.2em;
+		}
+		.card {
+			padding: 16px;
+			margin: 0 1em 2em 0;
+			background-color: pink;
+			width: 20em;
+			height: 30em;
+			float: left;
+			overflow: hidden;
+			border-radius: 0.2em;
+		}
+		.card h2 {
+			margin: 0;
+		}
+		.card p {
+			margin: 0;
+		}
+		.card img {
+			aspect-ratio: 1/1;
+			overflow: hidden;
+			border-radius: 50%;
+			height: 7em;
+			object-fit: cover;
+			margin: 0.5em 0 0.5em 0;
+		}
+
+		#meta {
+			margin-bottom: 1em;
+		}
+
+		nav {
+			display: flex;
+			flex-direction: row;
+			gap: 1em;
+			margin-bottom: 1em;
+		}
+
+		nav div {
+			padding: 0.5em 1em;
+			background-color: #f0f0f0;
+			border-radius: 0.2em;
+			cursor: pointer;
+		}
+
+		nav div:hover {
+			background-color: #e0e0e0;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 class="titolo_principale">Nasa 70</h1>
+
+	<div id="meta"></div>
+
+	<nav>
+		<div id="sortByTitle">Ordina per titolo</div>
+		<div id="sortByAuthor">Ordina per autore</div>
+		<div id="sortByDate">Ordina per data</div>
+	</nav>
+
+
+	<main>
+		caricamento dati…
+	</main>
+
+	<script type="module">
+
+		const API_URL = "https://ixd-supsi.github.io/n70api/"
+
+
+		const IMAGE_URL = API_URL + "immagini/"
+
+		const data = await fetch(API_URL + "data.json").then(r => r.json())
+
+		document.getElementById("meta").innerHTML = data.length + " progetti"
+
+		renderData(data)
+
+		document.getElementById("sortByTitle").addEventListener("click", () => {
+			renderData(data.sort( (a, b) => {
+				return a.titolo < b.titolo ? -1 : 1
+			}))
+		})
+
+		document.getElementById("sortByAuthor").addEventListener("click", () => {
+			renderData(data.sort( (a, b) => {
+				return a.autore < b.autore ? -1 : 1
+			}))
+		})
+
+		document.getElementById("sortByDate").addEventListener("click", () => {
+			renderData(data.sort( (a, b) => {
+				const dateA = new Date(a.data.anno, a.data.mese, a.data.giorno)
+				const dateB = new Date(b.data.anno, b.data.mese, b.data.giorno)
+				return dateA - dateB
+			}))
+		})
+
+		function renderData(data){
+			let html = ""
+			data.forEach(element => {
+				// metodo uno: testo puro
+				html += "<div class='card'>"
+				html += "<h2>" + element.titolo + "</h2>"
+				html += "<p>" + element.autore + "</p>"
+				html += "<p>" + element.data.giorno + ". " + element.data.mese + ". " + element.data.anno + "</p>"
+				html += "<img src='" + IMAGE_URL + element.immagine + "' alt='" + element.titolo + "'><br>"
+				html += "<p>Tags: " + element.tags.join(", ") + "</p>"
+				html += "<a href='" + element.url + "'>Visita il progetto</a>"
+				html += "<br>"
+				html += "<br>"
+				html += "<p>" + element.descrizione + "</p>"
+				html += "</div>"
+
+			})
+			document.querySelector("main").innerHTML = html
+		}
+
+	</script>
+</body>
+</html>
