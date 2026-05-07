@@ -110,7 +110,10 @@
 
 		function renderData(data){
 			let html = ""
-			data.forEach(element => {
+			// data.forEach(element => {
+			const numElementi = data.length
+			for(let i=0; i<numElementi; i++) {
+				const element = data[i % data.length]
 				// metodo uno: testo puro
 				html += "<div class='card'>"
 				html += "<h2>" + element.titolo + "</h2>"
@@ -123,8 +126,7 @@
 				html += "<br>"
 				html += "<p>" + element.descrizione + "</p>"
 				html += "</div>"
-
-			})
+			}
 			document.querySelector("main").innerHTML = html
 		}
 
