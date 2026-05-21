@@ -50,13 +50,12 @@ Questa repository contiene materiale didattico ed esempi pratici per l’apprend
 - [Carla De Gennaro](https://github.com/carladegennaro/Progetto-02), [NASA70](https://carladegennaro.github.io/progetto2/index)
 - [Claudio Ceppi](https://github.com/claudio-ceppi/CV429.01-Interaction-Design/NASA_70), [NASA70](https://claudio-ceppi.github.io/CV429.01-Interaction-Design/NASA_70/files/)
 - [Daniele Falcone](https://github.com/dadiccs/nasa70), [NASA70](https://dadiccs.github.io/nasa70/)
-- Davide Baretti
+- [Davide Baretti](https://github.com/davidebarattini/NASA70), [NASA70](https://davidebarattini.github.io/NASA70/)
 - Djordjaa Krsteva
 - Laura Pantani
 - [Luca Mazzola](https://github.com/lucamazzolaa/NASA70), [NASA70](https://lucamazzolaa.github.io/NASA70/)
 - [Melissa Broggini](https://github.com/melissabroggini/NASA70), [NASA70](https://melissabroggini.github.io/NASA70/)
-- Michelle Chicherio
+- [Michelle Chicherio](https://github.com/kikerio/thenasa70archive), [NASA70](https://kikerio.github.io/thenasa70archive/)
 - [Nahel Belli](https://github.com/naheleee/Progetto_2_Nasa70), [NASA70](https://naheleee.github.io/Progetto_2_Nasa70/)
 - Riccardo Vosti
 - [Sofia Ribeiro](https://github.com/sofiaribeiromarques/NASA70), [NASA70](https://sofiaribeiromarques.github.io/NASA70/)
-
