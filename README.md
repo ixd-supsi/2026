@@ -45,3 +45,18 @@ Questa repository contiene materiale didattico ed esempi pratici per l’apprend
 - Riccardo Vosti, [Test di gravità](https://github.com/riccardovosti)
 - Sofia Ribeiro, [Prime pagine sull'allunaggio](https://github.com/SofiaRibeiroMarques/NASA)
 
+#### Repository degli studenti - progetto 2:
+- Alissa Bionda, [NASA70](https://ali-0032.github.io/Progetto-02/02_prototipo_2/)
+- Carla De Gennaro, [NASA70](https://carladegennaro.github.io/progetto2/index)
+- Claudio Ceppi, [NASA70](https://claudio-ceppi.github.io/CV429.01-Interaction-Design/NASA_70/files/)
+- Daniele Falcone, [NASA70](https://dadiccs.github.io/nasa70/)
+- Davide Baretti
+- Djordjaa Krsteva
+- Laura Pantani
+- Luca Mazzola, [NASA70](https://lucamazzolaa.github.io/NASA70/)
+- Melissa Broggini, [NASA70](https://melissabroggini.github.io/NASA70/)
+- Michelle Chicherio
+- Nahel Belli, [NASA70](https://naheleee.github.io/Progetto_2_Nasa70/)
+- Riccardo Vosti
+- Sofia Ribeiro [NASA70](https://sofiaribeiromarques.github.io/NASA70/)
+
