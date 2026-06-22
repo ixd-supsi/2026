@@ -4,7 +4,7 @@ Progetti, esempi di codice e documenti del corso di Design dell’Interazione, s
 Questa repository contiene materiale didattico ed esempi pratici per l’apprendimento della programmazione interattiva, con particolare focus su JavaScript, HTML e l’ambiente del browser.
 
 
-#### Repository degli studenti - progetto 1:
+### Repository degli studenti - progetto 1:
 - [Davide Barattini](https://github.com/davidebarattini/Nasa_Spacesuits), [Spacesuit evolution](https://davidebarattini.github.io/Nasa_Spacesuits)
 - [Nahel Belli](https://github.com/Naheleee/Progetto_1_PerseveranceRover), [NASA - Perseverance Rover](https://Naheleee.github.io/Progetto_1_PerseveranceRover)
 - [Alissa Bionda](https://github.com/Ali-0032/Nebula_Vision), [Nebula Vision](https://ali-0032.github.io/Nebula_Vision/05_prototipo_3/)
@@ -20,7 +20,7 @@ Questa repository contiene materiale didattico ed esempi pratici per l’apprend
 - [Riccardo Vosti](https://github.com/RiccardoVosti/projectmoonbound), [Project Moonbound](https://riccardovosti.github.io/projectmoonbound/)
 
 
-#### Repository degli studenti - progetto 2:
+### Repository degli studenti - progetto 2:
 - [Davide Barattini](https://github.com/davidebarattini/NASA70), [NASA 70](https://davidebarattini.github.io/NASA70/)
 - [Nahel Belli](https://github.com/Naheleee/Progetto_2_Nasa70), [NASA70 - Archive](https://naheleee.github.io/Progetto_2_Nasa70/)
 - [Alissa Bionda](https://github.com/Ali-0032/NASA_70_Archive), [NASA 70 Archive](https://ali-0032.github.io/NASA_70_Archive/02_prototipo_2/home.html)
@@ -35,6 +35,7 @@ Questa repository contiene materiale didattico ed esempi pratici per l’apprend
 - [Sofia Ribeiro](https://github.com/SofiaRibeiroMarques/NASA70), [NASA 70](https://sofiaribeiromarques.github.io/NASA70/)
 - [Riccardo Vosti](https://github.com/RiccardoVosti/NASA70), [NASA70 Archive](https://riccardovosti.github.io/NASA70/)
 
+---
 
 #### Scrivere e distribuire codice
 - [Visual Studio](https://code.visualstudio.com)
