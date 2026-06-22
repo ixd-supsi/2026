@@ -6,7 +6,7 @@ Questa repository contiene materiale didattico ed esempi pratici per l’apprend
 
 #### Repository degli studenti - progetto 1:
 - [Davide Barattini](https://github.com/davidebarattini/Nasa_Spacesuits), [Spacesuit evolution](https://davidebarattini.github.io/Nasa_Spacesuits)
-- [Nahel Belli](https://github.com/Naheleee/Progetto_1_PerseveranceRover), [NASA - Perseverance Rover](https://davidebarattini.github.io/Nasa_Spacesuits)
+- [Nahel Belli](https://github.com/Naheleee/Progetto_1_PerseveranceRover), [NASA - Perseverance Rover](https://Naheleee.github.io/Progetto_1_PerseveranceRover)
 - [Alissa Bionda](https://github.com/Ali-0032/Nebula_Vision), [Nebula Vision](https://ali-0032.github.io/Nebula_Vision/05_prototipo_3/)
 - [Melissa Broggini](https://github.com/melissabroggini/NEO_Protocol), [NEO PROTOCOL](https://melissabroggini.github.io/NEO_Protocol/)
 - [Claudio Ceppi](https://github.com/Claudio-Ceppi/CV429.01-Interaction-Design/tree/main/Radiowave_NASA), [Radiowave NASA](https://claudio-ceppi.github.io/CV429.01-Interaction-Design/Radiowave_NASA/files/)
